@@ -1,30 +1,47 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const botones = document.querySelectorAll(".ramo");
+document.addEventListener("DOMContentLoaded", () => {
+  const ramos = document.querySelectorAll(".ramo");
 
-  botones.forEach((btn) => {
-    const prereq = btn.dataset.prereq;
-    if (prereq && !document.getElementById(prereq).classList.contains("aprobado")) {
-      btn.classList.add("bloqueado");
-    }
-
-    btn.addEventListener("click", () => {
-      if (btn.classList.contains("bloqueado")) return;
-
-      btn.classList.toggle("aprobado");
-
-      const next = btn.dataset.next;
-      if (next) {
-        const siguiente = document.getElementById(next);
-        if (siguiente && !siguiente.classList.contains("aprobado")) {
-          siguiente.classList.remove("bloqueado");
+  // Inicializa el estado bloqueado según los prerrequisitos
+  ramos.forEach((ramo) => {
+    const prereqs = ramo.dataset.prereq?.split(" ") || [];
+    if (prereqs.length > 0) {
+      let bloqueado = false;
+      for (let id of prereqs) {
+        const prereqElem = document.getElementById(id);
+        if (!prereqElem || !prereqElem.classList.contains("aprobado")) {
+          bloqueado = true;
+          break;
         }
       }
+      if (bloqueado) ramo.classList.add("bloqueado");
+    }
+  });
 
-      // Si es prerrequisito de varios, desbloquearlos todos si corresponde
-      botones.forEach((otroBtn) => {
-        const prereq = otroBtn.dataset.prereq;
-        if (prereq && document.getElementById(prereq).classList.contains("aprobado")) {
-          otroBtn.classList.remove("bloqueado");
+  // Manejo de clics
+  ramos.forEach((ramo) => {
+    ramo.addEventListener("click", () => {
+      if (ramo.classList.contains("bloqueado")) return;
+
+      ramo.classList.toggle("aprobado");
+
+      // Revalidar todos los botones que tienen prerequisitos
+      ramos.forEach((otro) => {
+        const prereqs = otro.dataset.prereq?.split(" ") || [];
+        if (prereqs.length > 0) {
+          let desbloquear = true;
+          for (let id of prereqs) {
+            const prereqElem = document.getElementById(id);
+            if (!prereqElem || !prereqElem.classList.contains("aprobado")) {
+              desbloquear = false;
+              break;
+            }
+          }
+          if (desbloquear) {
+            otro.classList.remove("bloqueado");
+          } else {
+            otro.classList.add("bloqueado");
+            otro.classList.remove("aprobado"); // opcional: quitar aprobación si pierde el prerrequisito
+          }
         }
       });
     });
