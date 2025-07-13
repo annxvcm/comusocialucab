@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malla Curricular - Comunicación Audiovisual</title>
-  <link rel="stylesheet" href="estilos.css"/>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <h1>Malla Curricular - Comunicación Audiovisual</h1>
   <div class="malla">
 
-    <!-- EJEMPLO: Cada ramo tiene un id y data-prereq -->
-    <div class="semestre" id="semestre-1">
+    <!-- Primer Semestre -->
+    <div class="semestre">
       <h2>Primer Semestre</h2>
       <button class="ramo" id="fundamentos-gramatica" data-next="comunicacion-escrita-1">Fundamentos de Gramática</button>
       <button class="ramo" id="competencia-textual">Competencia Textual en Español</button>
@@ -20,20 +20,89 @@
       <button class="ramo" id="comprension-ingles" data-next="produccion-ingles">Comprensión de Textos en Inglés</button>
     </div>
 
-    <div class="semestre" id="semestre-2">
+    <!-- Segundo Semestre -->
+    <div class="semestre">
       <h2>Segundo Semestre</h2>
       <button class="ramo" id="comunicacion-escrita-1" data-prereq="fundamentos-gramatica" data-next="comunicacion-escrita-2">Comunicación Escrita I</button>
       <button class="ramo" id="teorias-sociales">Teorías Sociales de la Comunicación</button>
-      <button class="ramo" id="organizacion">Comunicación y Organización</button>
-      <button class="ramo" id="redes-sociales">Producción de Contenidos para Redes Sociales</button>
+      <button class="ramo" id="comunicacion-organizacion">Comunicación y Organización</button>
+      <button class="ramo" id="contenidos-redes">Producción de Contenidos para Redes Sociales</button>
       <button class="ramo" id="fotografia">Fotografía</button>
       <button class="ramo" id="comunicacion-grafica">Comunicación Gráfica</button>
       <button class="ramo" id="ecologia">Ecología, Ambiente y Sustentabilidad</button>
       <button class="ramo" id="produccion-ingles" data-prereq="comprension-ingles">Producción de Contenidos en Inglés</button>
     </div>
 
-    <!-- Agrega el resto de los semestres siguiendo el mismo formato -->
-    
+    <!-- Tercer Semestre -->
+    <div class="semestre">
+      <h2>Tercer Semestre</h2>
+      <button class="ramo" id="comunicacion-escrita-2" data-prereq="comunicacion-escrita-1">Comunicación Escrita II</button>
+      <button class="ramo" id="semiotica">Semiótica</button>
+      <button class="ramo" id="etica">Ética de la Comunicación Social</button>
+      <button class="ramo" id="fundamentos-guion" data-next="produccion-cine historia-cine postproduccion estructura-dramatica analisis-filmico personajes-dialogos">Fundamentos de Guion</button>
+      <button class="ramo" id="produccion-audiovisual" data-next="realizacion-cine">Producción Audiovisual</button>
+      <button class="ramo" id="edicion" data-next="postproduccion">Edición</button>
+      <button class="ramo" id="sonido">Sonido</button>
+      <button class="ramo" id="camara-iluminacion" data-next="direccion-fotografia">Taller de Cámara e Iluminación</button>
+      <button class="ramo" id="tv-streaming" data-next="produccion-tv-streaming">Televisión y Streaming</button>
+      <button class="ramo" id="comunicacion-escenica">Comunicación Escénica</button>
+    </div>
+
+    <!-- Cuarto Semestre -->
+    <div class="semestre">
+      <h2>Cuarto Semestre</h2>
+      <button class="ramo" id="produccion-cine" data-prereq="fundamentos-guion" data-next="realizacion-cine">Producción Cinematográfica</button>
+      <button class="ramo" id="videografia">Videografía</button>
+      <button class="ramo" id="escenografia">Taller de Escenografía y Caracterización</button>
+      <button class="ramo" id="eventos">Gestión de Eventos</button>
+      <button class="ramo" id="regimen-juridico" data-next="legislacion">Régimen Jurídico de la Comunicación</button>
+      <button class="ramo" id="innovacion">Innovación y Emprendimiento</button>
+      <button class="ramo" id="servicio-comunitario">Curso de Servicio Comunitario</button>
+    </div>
+
+    <!-- Quinto Semestre -->
+    <div class="semestre">
+      <h2>Quinto Semestre</h2>
+      <button class="ramo" id="historia-cine" data-prereq="fundamentos-guion">Historia del Cine</button>
+      <button class="ramo" id="postproduccion" data-prereq="fundamentos-guion edicion" data-next="animacion">Postproducción</button>
+      <button class="ramo" id="estructura-dramatica" data-prereq="fundamentos-guion" data-next="guion-cine1 guion-cine2 adaptacion">Estructura Dramática</button>
+      <button class="ramo" id="analisis-filmico" data-prereq="fundamentos-guion" data-next="critica">Análisis Fílmico</button>
+      <button class="ramo" id="personajes-dialogos" data-prereq="fundamentos-guion">Personajes y Diálogos</button>
+      <button class="ramo" id="guion-cine1" data-prereq="estructura-dramatica" data-next="guion-cine2">Guion para Cine I</button>
+      <button class="ramo" id="transmedia">Narrativas Transmedia</button>
+    </div>
+
+    <!-- Sexto Semestre -->
+    <div class="semestre">
+      <h2>Sexto Semestre</h2>
+      <button class="ramo" id="realizacion-cine" data-prereq="produccion-cine" data-next="proyecto-audiovisual-1">Realización Cinematográfica</button>
+      <button class="ramo" id="composicion-musical">Composición Musical para Audiovisuales</button>
+      <button class="ramo" id="direccion-fotografia" data-prereq="camara-iluminacion" data-next="direccion-actores">Dirección de Fotografía</button>
+      <button class="ramo" id="produccion-tv-streaming" data-prereq="tv-streaming">Producción para Televisión y Streaming</button>
+      <button class="ramo" id="guion-cine2" data-prereq="guion-cine1 estructura-dramatica" data-next="guion-seriado">Guion para Cine II</button>
+      <button class="ramo" id="gestion-distribucion">Gestión y Distribución Audiovisual</button>
+    </div>
+
+    <!-- Séptimo Semestre -->
+    <div class="semestre">
+      <h2>Séptimo Semestre</h2>
+      <button class="ramo" id="direccion-actores" data-prereq="direccion-fotografia">Dirección de Actores para Audiovisuales</button>
+      <button class="ramo" id="critica" data-prereq="analisis-filmico">Crítica Audiovisual</button>
+      <button class="ramo" id="animacion" data-prereq="postproduccion">Animación y Efectos Visuales</button>
+      <button class="ramo" id="contenidos-digitales">Taller de Producción de Contenidos Digitales</button>
+      <button class="ramo" id="trabajo-grado-1">Trabajo de Grado I</button>
+    </div>
+
+    <!-- Octavo Semestre -->
+    <div class="semestre">
+      <h2>Octavo Semestre</h2>
+      <button class="ramo" id="guion-seriado" data-prereq="guion-cine2">Guion para Seriado</button>
+      <button class="ramo" id="adaptacion" data-prereq="estructura-dramatica">Adaptación Cinematográfica</button>
+      <button class="ramo" id="proyecto-audiovisual-1" data-prereq="realizacion-cine">Taller de Proyecto Audiovisual I</button>
+      <button class="ramo" id="legislacion" data-prereq="regimen-juridico">Legislación y Políticas Audiovisuales</button>
+      <button class="ramo" id="trabajo-grado-2" data-prereq="trabajo-grado-1">Trabajo de Grado II</button>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
