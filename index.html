@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Curricular - Comunicación Audiovisual</title>
+  <link rel="stylesheet" href="estilos.css"/>
+</head>
+<body>
+  <h1>Malla Curricular - Comunicación Audiovisual</h1>
+  <div class="malla">
 
+    <!-- EJEMPLO: Cada ramo tiene un id y data-prereq -->
+    <div class="semestre" id="semestre-1">
+      <h2>Primer Semestre</h2>
+      <button class="ramo" id="fundamentos-gramatica" data-next="comunicacion-escrita-1">Fundamentos de Gramática</button>
+      <button class="ramo" id="competencia-textual">Competencia Textual en Español</button>
+      <button class="ramo" id="comunicacion-oral">Comunicación Oral</button>
+      <button class="ramo" id="identidad-liderazgo">Identidad, Liderazgo y Compromiso I</button>
+      <button class="ramo" id="comprension-ingles" data-next="produccion-ingles">Comprensión de Textos en Inglés</button>
+    </div>
+
+    <div class="semestre" id="semestre-2">
+      <h2>Segundo Semestre</h2>
+      <button class="ramo" id="comunicacion-escrita-1" data-prereq="fundamentos-gramatica" data-next="comunicacion-escrita-2">Comunicación Escrita I</button>
+      <button class="ramo" id="teorias-sociales">Teorías Sociales de la Comunicación</button>
+      <button class="ramo" id="organizacion">Comunicación y Organización</button>
+      <button class="ramo" id="redes-sociales">Producción de Contenidos para Redes Sociales</button>
+      <button class="ramo" id="fotografia">Fotografía</button>
+      <button class="ramo" id="comunicacion-grafica">Comunicación Gráfica</button>
+      <button class="ramo" id="ecologia">Ecología, Ambiente y Sustentabilidad</button>
+      <button class="ramo" id="produccion-ingles" data-prereq="comprension-ingles">Producción de Contenidos en Inglés</button>
+    </div>
+
+    <!-- Agrega el resto de los semestres siguiendo el mismo formato -->
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
